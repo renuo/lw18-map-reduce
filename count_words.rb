@@ -12,7 +12,7 @@ renuo_de_urls = renuo_urls.select { |url| url.include?('/de/') }
 word_count = {}
 renuo_de_urls.each do |url|
   page_html = Nokogiri::HTML(open(url).read)
-  page_text = page_html.text.gsub!(/\W/,' ')
+  page_text = page_html.text.gsub!(/\W/, ' ')
   page_text.each_line do |line|
     words = line.split.compact
     words.each do |word|
